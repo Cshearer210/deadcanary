@@ -1,5 +1,21 @@
 # deadcanary
 
+> ## This project now lives in [Cshearer210/claimproof](https://github.com/Cshearer210/claimproof)
+>
+> deadcanary and claimproof are one idea at two layers, so they are one repo as of
+> 2026-08-13. claimproof holds a claim of success to evidence a machine can check;
+> deadcanary asks the same question of a dbt test suite, by breaking the data on purpose
+> to find the tests that cannot fail. They now join in code rather than in a paragraph:
+> deadcanary contributes a claimproof `Gate`, and the proof it produces expires on its own
+> when the test suite changes.
+>
+> **The source is at [`packages/deadcanary`](https://github.com/Cshearer210/claimproof/tree/main/packages/deadcanary).**
+> Open issues and pull requests there. Nothing you have installed breaks: `pip install
+> deadcanary` still installs this package, and `pip install claimproof[dbt]` installs both.
+>
+> This repository is kept for its history and for the links already pointing at it. It is
+> not where the work happens any more.
+
 **Find the data tests that cannot fail.**
 
 A canary that is already dead cannot warn you about anything, and it looks exactly like
