@@ -102,10 +102,13 @@ class DbtProject:
         profiles = self.root / "profiles.yml"
         if not profiles.is_file():
             return None
-        try:
-            import yaml                      # arrives with dbt; optional standalone
-        except ImportError:
-            return None
+        # Imported here rather than at module top so a project with no profile
+        # never needs it, and NOT wrapped in a try: PyYAML is a declared
+        # dependency, so a missing one is a broken install and must say so. It
+        # was swallowed for one commit, and the effect was that this whole method
+        # silently did nothing on any machine without dbt installed -- reverting
+        # to the guess it exists to replace, with nothing anywhere reporting it.
+        import yaml
         try:
             data = yaml.safe_load(profiles.read_text(encoding="utf-8")) or {}
             project = yaml.safe_load(
