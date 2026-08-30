@@ -1,7 +1,0 @@
-deadcanary_demo:
-  target: dev
-  outputs:
-    dev:
-      type: duckdb
-      path: demo.duckdb
-      threads: 1

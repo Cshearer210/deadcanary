@@ -1,5 +1,0 @@
-name: deadcanary_demo
-version: "1.0.0"
-profile: deadcanary_demo
-seed-paths: ["seeds"]
-model-paths: ["models"]
